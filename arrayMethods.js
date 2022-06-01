@@ -1,3 +1,11 @@
+const {
+  bubbleSort,
+  insertionSort,
+  selectionSort,
+  mergeSort,
+  quickSort,
+} = require("./arraySortMethods");
+
 function forEach(array, cb) {
   for (let i = 0; i < array.length; i++) {
     const element = array[i];
@@ -90,20 +98,13 @@ function findIndex(array, cb) {
   return -1;
 }
 
-// function sort(array, compareFn = (a, b) => a - b) {
-//   for (let i = 1; i < array.length; i++) {
-//     const a = array[i - 1];
-//     const b = array[i];
-
-//     if (compareFn(a, b) > 0) {
-//       const [removed] = array.splice(i - 1, 1);
-//       array.splice(i, 0, removed);
-//       console.log(a, b, removed, array, i);
-//     }
-//   }
-//   console.log(array);
-//   return array;
-// }
+function sort(array, compareFn) {
+  return quickSort(array, compareFn);
+  return mergeSort(array, compareFn);
+  return selectionSort(array, compareFn);
+  return insertionSort(array, compareFn);
+  return bubbleSort(array, compareFn);
+}
 
 module.exports = {
   forEach,
@@ -116,5 +117,5 @@ module.exports = {
   find,
   includes,
   findIndex,
-  //   sort,
+  sort,
 };

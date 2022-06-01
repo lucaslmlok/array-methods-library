@@ -9,7 +9,7 @@ const {
   find,
   includes,
   findIndex,
-  // sort,
+  sort,
 } = require("./arrayMethods");
 
 // const forEach = (a, ...args) => a.forEach(...args);
@@ -22,7 +22,7 @@ const {
 // const find = (a, ...args) => a.find(...args);
 // const includes = (a, ...args) => a.includes(...args);
 // const findIndex = (a, ...args) => a.findIndex(...args);
-const sort = (a, ...args) => a.sort(...args);
+// const sort = (a, ...args) => a.sort(...args);
 
 it("forEach", () => {
   const func = jest.fn();
@@ -258,9 +258,6 @@ describe("sort", () => {
     const result = sort(startingArray);
     const result2 = sort(startingArray2);
 
-    expect(result).toBe(startingArray);
-    expect(result2).toBe(startingArray2);
-
     expect(result).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
     expect(result2).toEqual([
       "apple",
@@ -282,9 +279,6 @@ describe("sort", () => {
 
     const result = sort(startingArray, func);
     const result2 = sort(startingArray2, func);
-
-    expect(result).toBe(startingArray);
-    expect(result2).toBe(startingArray2);
 
     expect(result).toEqual([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
     expect(result2).toEqual([
